@@ -16,7 +16,7 @@ class AboutWindow:
         self.about_window.geometry("250x220")
         self.about_window.resizable(False, False)
 
-        generator_version = Label(self.about_window, text='Password generator 0.1')
+        generator_version = Label(self.about_window, text='Password generator 1.0')
 
         img_frame = Frame(self.about_window)
 
