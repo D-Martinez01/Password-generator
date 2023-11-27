@@ -97,7 +97,7 @@ class PasswordGeneratorGUI:
 
         self.tree = ttk.Treeview(root, columns=('c1', 'c2'), show='headings', height=5)
 
-        self.tree.column("c1", anchor=CENTER, width=1)
+        self.tree.column("c1", anchor=CENTER)
         self.tree.heading("c1", text="ID")
         self.tree.column("c2", anchor=CENTER)
         self.tree.heading("c2", text="Generated password")
@@ -130,7 +130,8 @@ class PasswordGeneratorGUI:
         export_password.grid(row=10, column=1, sticky='n')
         delete_generated.grid(row=10, column=2, sticky='w')
 
-    def validate_integer(self, char, entry_value):
+    @staticmethod
+    def validate_integer(char, entry_value):
         if entry_value == '':
             return True
         return char.isdigit() and len(entry_value) <= 3 and int(entry_value) != 0 or char == ""
